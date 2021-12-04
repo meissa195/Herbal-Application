@@ -9,10 +9,15 @@ public class Main {
     //add options to learn about existing herb or add or remove an herb
 
     public static void main(String[] args) {
-        UserInterface input = new UserInterface();
-        Ask ask = new Ask();
-        ask.askUser();
+        //have an herb list
+        //be able to add and remove from the list
+        //be able to access an herb from the list and its associated qualities
+        //be able to show the list of herbs
+       UserInterface userInterface = new UserInterface();
+       userInterface.askUser();
+
     }
+}
 
     //should this have qualities and actions because every herb has them? Also, note that a garlic is an herb
     //there it should extend the Herbs class
@@ -22,36 +27,36 @@ public class Main {
     //ask if they want to learn, remove, or add
 
 
-    //why do I have to make this static?
-    public static class UserInterface {
-
-        public Garlic garlic = new Garlic();
-
-
-
-        //user interface that asks for herb of interest?
-
-
-
-//                //then asks what would you like to know the herb?
-//                ArrayList<String> qualities = new ArrayList<>();
-//                qualities.add("Hot");
-//                qualities.add("Cold");
-//                qualities.add("Dry");
-//                qualities.add("Moist");
-            }
-
-            public void addAnHerb() {
-
-            }
-
-            public void removeAnHerb() {
-
-            }
-
-        }
-    }
-}
+//    //why do I have to make this static?
+//    public static class UserInterface {
+//
+//        public Garlic garlic = new Garlic();
+//
+//
+//
+//        //user interface that asks for herb of interest?
+//
+//
+//
+////                //then asks what would you like to know the herb?
+////                ArrayList<String> qualities = new ArrayList<>();
+////                qualities.add("Hot");
+////                qualities.add("Cold");
+////                qualities.add("Dry");
+////                qualities.add("Moist");
+//            }
+//
+//            public void addAnHerb() {
+//
+//            }
+//
+//            public void removeAnHerb() {
+//
+//            }
+//
+//        }
+//    }
+//}
 
 //                class Action {
 //
