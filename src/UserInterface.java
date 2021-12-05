@@ -12,11 +12,11 @@ public class UserInterface {
 
     public void askUser() {
         while (true) {
-        System.out.println("What would you like to do today?");
-        System.out.println("1. Add an herb.");
-        System.out.println("2. Remove an herb.");
-        System.out.println("3. Learn about an herb.");
-        int input = scanner.nextInt();
+            System.out.println("What would you like to do today?");
+            System.out.println("1. Add an herb.");
+            System.out.println("2. Remove an herb.");
+            System.out.println("3. Learn about an herb.");
+            int input = scanner.nextInt();
             if (input == 1) {
                 this.herbList.addToHerbList();
             } else if (input == 2) {
@@ -24,13 +24,7 @@ public class UserInterface {
             } else if (input == 3) {
                 System.out.println("Which herb would you like to learn about?");
                 this.herbList.getHerbList();
-                String herb = scanner.nextLine();
-                if (herb.equals("garlic")) {
-                    System.out.println("You would like to learn about garlic!");
-                }
-            } else
-                System.out.println("Invalid entry.");
+            }
         }
-
     }
-    }
+}

@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class HerbList {
-    private ArrayList<String> herbList;
-    private HashMap<String, String> qualities;
+    public ArrayList<String> herbList;
+    public HashMap<String, String> qualities;
 
     public HerbList() {
         this.herbList = new ArrayList<>();
@@ -17,8 +17,8 @@ public class HerbList {
 
     public void addToHerbList() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("What herb would you like to add to the list?");
         while (true) {
-            System.out.println("What herb would you like to add to the list?");
             String herb = scanner.nextLine();
             if (!this.herbList.contains(herb)) {
                 this.herbList.add(herb);
@@ -26,6 +26,14 @@ public class HerbList {
                 String qualities = scanner.nextLine();
                 this.qualities.put(herb,qualities);
 //                System.out.println("The herb you added is " + herb + ", and its qualities are:\n" + this.qualities.get(herb));
+                System.out.println("Would you like to add another herb? Type 'yes' or 'no'");
+                String response = scanner.nextLine();
+                if(response.equals("yes")) {
+                    System.out.println("What herb would you like to also add?");
+                    continue;
+                } else if (response.equals("no")) {
+                    break;
+                }
                 continue;
             } else
                 break;
@@ -50,6 +58,14 @@ public class HerbList {
                 if(response.equals("yes")) {
                     this.herbList.remove(herb);
                     System.out.println("The herb has been removed!");
+                    System.out.println("Would you like to remove another herb?");
+                    String response1 = scanner.nextLine();
+                    if (response1.equals("yes")) {
+                        continue;
+                    } else if (response1.equals("no")) {
+                        break;
+                    }
+                    continue;
                 } else if (response.equals("no")) {
                     System.out.println("Herb has not been removed.");
                 }
@@ -60,8 +76,13 @@ public class HerbList {
     }
 
     public void getHerbList() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
         for (String herb : this.herbList) {
-            System.out.println(herb);
+            if (input.equals(herb)) {
+                System.out.println(herb);
+            } else
+                System.out.println("Herb not found!");
         }
     }
     public void addToQualities(String qualities) {
