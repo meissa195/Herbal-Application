@@ -38,7 +38,7 @@ public class HerbList {
             } else
                 break;
         }
-            System.out.println("\nHerb already added.\n");
+            System.out.println("\nHerb already added.");
             System.out.println("The herbs you added are:\n");
             for (String herb : this.herbList) {
                 System.out.println(herb + " - " + this.qualities.get(herb) +"\n");
@@ -63,7 +63,7 @@ public class HerbList {
                     if (response1.equals("yes")) {
                         continue;
                     } else if (response1.equals("no")) {
-                        break;
+                        System.out.println();
                     }
                     continue;
                 } else if (response.equals("no")) {

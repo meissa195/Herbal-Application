@@ -15,7 +15,6 @@ public class Main {
         //be able to show the list of herbs
        UserInterface userInterface = new UserInterface();
        userInterface.askUser();
-
     }
 }
 
