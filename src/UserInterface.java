@@ -22,7 +22,6 @@ public class UserInterface {
             } else if (input == 2) {
                 this.herbList.removeFromHerbList();
             } else if (input == 3) {
-                System.out.println("Which herb would you like to learn about?");
                 this.herbList.getHerbList();
             }
         }

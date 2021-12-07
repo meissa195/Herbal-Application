@@ -9,10 +9,12 @@ public class Main {
     //add options to learn about existing herb or add or remove an herb
 
     public static void main(String[] args) {
-        //have an herb list
+        //be able to control add and remove, have folks only learn (admin vs user access)
+        // have an herb list
         //be able to add and remove from the list
         //be able to access an herb from the list and its associated qualities
         //be able to show the list of herbs
+        //get a database connected - look into mongo or SQL (structured table), JDBC for local storage?
        UserInterface userInterface = new UserInterface();
        userInterface.askUser();
     }

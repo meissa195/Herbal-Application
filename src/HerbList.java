@@ -19,7 +19,7 @@ public class HerbList {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What herb would you like to add to the list?");
         while (true) {
-            String herb = scanner.nextLine();
+            String herb = scanner.nextLine(); //break point if red
             if (!this.herbList.contains(herb)) {
                 this.herbList.add(herb);
                 System.out.println("Add its qualities:");
@@ -33,8 +33,15 @@ public class HerbList {
                     continue;
                 } else if (response.equals("no")) {
                     break;
+                } else if (!response.equals("yes") || response.equals("no")) {
+                    System.out.println("Response not recognized. Would you still like to remove an herb?");
+                    String response2 = scanner.nextLine();
+                    if (response2.equals("yes")) {
+                        continue;
+                    } else if (response2.equals("no")) {
+                        break;
+                    }
                 }
-                continue;
             } else
                 break;
         }
@@ -64,23 +71,26 @@ public class HerbList {
                         continue;
                     } else if (response1.equals("no")) {
                         System.out.println();
+                        break;
+                    } else if (!response1.equals("yes") || response1.equals("no")) {
+                        System.out.println("Response not recognized. Please try again.");
+                        continue;
                     }
-                    continue;
-                } else if (response.equals("no")) {
                     System.out.println("Herb has not been removed.");
                 }
             } else if (this.herbList.isEmpty())
+                System.out.println("Herb is not on the list.");
                 break;
         }
-        System.out.println("Herb has already been removed or does not exist.");
     }
 
     public void getHerbList() {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        for (String herb : this.herbList) {
-            if (input.equals(herb)) {
-                System.out.println(herb);
+        System.out.println("Which herb would you like to learn about?");
+        for (String herb : herbList) {
+            System.out.println(herb);
+            if (scanner.nextLine().equalsIgnoreCase(herb)) {
+                System.out.println(herb + " has the following qualities: " + qualities.get(herb));
             } else
                 System.out.println("Herb not found!");
         }
